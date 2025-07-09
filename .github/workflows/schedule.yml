@@ -1,0 +1,27 @@
+name: Standup Picker
+
+on:
+  schedule:
+    - cron: '0 8 * * 1-5'  # 10h Paris = 8h UTC
+  workflow_dispatch:  # permet d'exécuter manuellement
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install slack_sdk
+
+      - name: Run script
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: python main.py
