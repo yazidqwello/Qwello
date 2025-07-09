@@ -2,7 +2,7 @@ name: Standup Picker
 
 on:
   schedule:
-    - cron: '0 9 * * 1-5'  # 9h UTC = 11h Paris (CET/CEST selon saison)
+      - cron: '0 8 * * 1-5'  # 8h UTC = 10h Paris
 
 jobs:
   run-script:
