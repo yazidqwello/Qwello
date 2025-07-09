@@ -7,7 +7,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
 participants = ["Yazid", "Ayoub", "Vincent", "Sorel", "Jessica", "jamila"]
-channel_name = "#standup_fr"
+channel_name = "#canal_standup-test"
 slack_token = os.getenv("SLACK_BOT_TOKEN")
 
 today = datetime.datetime.today()
